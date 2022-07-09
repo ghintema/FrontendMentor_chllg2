@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  	<link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  	<!-- Kopierte Links aus www.font.google.com -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500&display=swap" rel="stylesheet">	
+	<title>Frontend Mentor | Skilled e-learning landing page</title>
+
+	<style> 
+
+		/* general properties and settings for all devices */
+		#background {
+			background:linear-gradient(180deg,#FFFFFF,#F2F2F2);
+			border:1px solid black;
+				
+		}
+		button.black, button.colorPattern1, button.colorPattern2 { /* common properties of all buttons */
+			border-radius: 24px;
+			border:none;
+			font-size:16px
+		}
+		.colorPattern1 {
+			background:linear-gradient(360deg,#F02AA6, #FF6F48);
+			font-weight:700;
+			color:white;
+		}
+		button.colorPattern1:hover, 
+		button.colorPattern2:hover, button.black:hover {
+			opacity: 0.5;
+		}
+		.colorPattern2 {
+			background:linear-gradient(360deg,#4851FF, #F02AA6);
+			font-weight: 700;
+			color:white;
+		}
+		.black {
+			color:white;
+			font-weight: 700;
+			background-color: #13183F; /* figma */
+		}
+		p.skilled {
+			font-family: 'Plus Jakarta Sans';
+			font-style: normal;
+			font-weight: 800;
+			font-size: 28px;
+			line-height: 35px;
+		}
+		
+		h1#slogan {
+			font-family: 'Plus Jakarta Sans';
+			font-style: normal;
+			font-weight: 800;
+			font-size: 40px;
+			line-height: 50px;
+			color: #13183F;
+		}
+		p.callToAction{
+			/* Check out our most p */
+
+			font-family: 'Plus Jakarta Sans';
+			font-style: normal;
+			font-weight: 800;
+			font-size: 24px;
+			line-height: 32px;
+			color: #FFFFFF;
+		}
+		.header, .offers {
+			display:flex;
+			flex-wrap:wrap;
+			justify-content:center;
+		}
+		p.description{
+			font-size:16px;
+			font-weight: 500;
+			color: #83869A;
+			font-family:  "Plus Jakarta Sans"
+		}
+		
+		.offer > a {
+			font-family: 'Plus Jakarta Sans';
+			font-style: normal;
+			font-weight: 700;
+			font-size: 18px;
+			line-height: 28px;
+			color: #F74780;
+			text-decoration: none;
+		}
+		
+		footer {
+			position:relative; /* for positioning of content */
+			background-color:black;
+		}
+
+		/* MOBILE FIRST: properties and settings for mobile-devices */
+
+		#background {
+			width:375px;	
+			margin:auto;
+		}
+		/*white space left and right */
+		
+		.topline, .header, .offers, div.callToAction, .bottomline { 
+			margin:0px 16px; /* 0px top & bottom, 16px left & right */
+/*			border:4px solid red;*/
+
+		}
+		/* size of buttons */
+		button.black, button.colorPattern2 { 
+			height:48px;
+			width:140px;
+		}
+		button.colorPattern1 { /* large button on the left */
+			height:56px;
+			width:156px;
+			border-radius:28px;
+
+		}
+		.topline > p.skilled {
+			float:left;
+			margin-top:28px;
+		}
+		.topline > button.black {
+			float:right;
+			margin-top:16px;
+		}
+		.header {
+			clear:both;
+			display:flex;
+			flex-wrap:wrap;
+			flex-shrink:0;
+		}
+		.slogan {
+			width:343px;
+		}
+		.description { /* applicated for header and offers
+			/* ?????*/
+		}
+		div.logo { /* picture frame */
+			width:327px;
+			height: 327px;
+			margin:auto; /* center horizontaly */
+			margin-top:70px; /* distance to button "Get Started" */
+			position:relative; /* to center the picture */
+/*				border:1px solid red;*/
+			overflow:visible; /* to see the shadow */
+		}
+		img#logo { /* chossing picture and visible area */;
+			content: url(starter-code/assets/image-hero-mobile.png) ;
+			position:absolute;
+			top:-9999px;
+			bottom:-9999px;
+			left:-9999px;
+			right:-9999px;
+			margin:auto;
+			/*symmetrical positioning: showing center of picture */
+			/*unsymmetrical positioning: showing any area, shifting the picture from center out. */		
+		}
+		/* setAttribute() zum überschreiben des Inhaltes von logo img für tablet und desktop */
+
+		div.callToAction {
+			border-radius:10px;
+			height:120px;	/* different for tablet, desktop */
+/*			width:343px;     different for tablet, desktop */
+			align-self:flex-end;
+			padding-left:0px;
+			margin:0px 0px;
+		}
+		div.callToAction > p {
+			padding-top:20px;
+		}
+		div.callToAction > p.callToAction, div.offer > p, div.offer > a, div.offer >h3 {
+/*			width:286px; Not necesary due to margins */
+			margin: 0px 28px;
+		}
+		.offer {
+			position:relative; /* for absolute positioning of icon and link */
+			background-color:white;
+			margin-top:40px;
+			height: 259px; /*  different for tablet, desktop */
+			border-radius: 10px;
+								
+		}
+		.offer > .icon {
+			position:absolute;	
+			top: -24px;
+			left:28px;	/* different for tablet, desktop */
+		}
+		.offer > h3.category {
+			/* ????? */
+			margin-top:50px;
+		}
+		.offer > a {
+			position:absolute;
+			bottom:38px; /*	 for moblie and tablet */
+		}
+		footer {
+			height:120px;
+		}
+		footer p.skilled {
+			color:white;
+			float:left;
+			margin:top:70px;
+
+		}
+		footer button {
+			float:right;
+			margin-top:36px; /* (120 - 48) / 2 */
+		}
+		
+		
+		/*ADAPTION: Properties and settings for tablet */
+		@media (min-width: 768px) { /*Figma */
+			#background {
+				width:768px; /* Figma */	
+				margin:auto;
+				overflow: hidden;
+			}
+		/*white space left and right */
+			.topline, .header, .offers, div.callToAction, .bottomline {
+				margin: 0px 40px;
+			}
+			.topline > p.skilled {
+				float:left;
+				margin-top:34px;
+			}
+			.topline > button.black {
+				float:right;
+				margin-top:24px;
+			}
+			.slogan {
+				width:398px; /* Figma */
+			}
+			.header {
+				margin-top:130px;
+				margin-bottom:130px;
+/*				border:2px solid red;*/
+			}
+			div.logo { /* picture frame */
+				width:200px;
+				height: 200px;	/* framing of picture */
+				margin:auto; /* center horizontaly */
+				margin-top:70px; /* distance to button "Get Started" */
+				position:relative; /* to center the picture */
+/*					border:1px solid red;*/
+				overflow:visible; /* to see the shadow */
+			}
+			img#logo { /* chossing picture and visible area */;
+				content: url(starter-code/assets/image-hero-tablet.png) ;
+				width:300%; 	/* scaling of picture */
+				position:absolute;
+				top:-9999px;
+				bottom:-9900px;
+				left:-9739px;
+				right:-9999px;
+				margin:auto;
+				/*symmetrical positioning: showing center of picture */
+				/*unsymmetrical positioning: showing any area, shifting the picture from center out. */		
+			}
+			
+			.offers {
+				width: 689px;
+				justify-content:space-between;
+			}
+			div.callToAction, div.offer {
+				margin-left:0px;
+				margin-right:0px;
+				width:339px;
+/*				border:1px solid red;*/
+			}
+			
+			div.callToAction > p, div.offer > p, div.offer > a, div.offer >h3 {
+				width:286px;
+				margin-left:33px;
+			}
+
+
+			
+		}
+				
+		
+		
+		
+		
+
+	
+	
+	
+	</style>
+</head>
+<body>
+	<div id="background"> <!-- for color gradient -->
+		<div class="topline">
+			<p class="skilled">skilled</p>
+			<button class="black">Get Started</button>
+		</div>
+		<div class="header">
+			<div class="slogan">
+				<h1 id="slogan">Maximize skill, minimize budget</h1>
+				<p class="description">Our modern courses across a range of <nobr>in-demand</nobr> skills will give you the knowledge you need to live the life you want.</p>
+				<button class="colorPattern1">Get Started</button>
+			</div>
+			<div class="logo">
+<!--				<img src="starter-code/assets/image-hero-mobile.png" alt="Markenlogo: Fraum mit Kaffeetasse">-->
+					<img id="logo" alt="Frau mit Kaffeetasse vor einem Laptop">
+			</div>
+		</div>
+		<div class="offers">
+			<div class="callToAction colorPattern1">
+				<p class="callToAction">Check out our most popular courses!</p>
+			</div>
+			<div class="offer">
+				<img class="icon" src="starter-code/assets/icon-animation.svg" alt="Icon zum Thema Animation">
+				<h3 class="category">Animation</h3>
+				<p class="description">Learn the latest animation techniques to create stunning motion design and captivate your audience.</p>
+				<a href="#">Get Started</a>
+			</div>
+			<div class="offer">
+				<img class="icon" src="starter-code/assets/icon-design.svg" alt="Icon zum Thema Animation">
+				<h3 class="category">Design</h3>
+				<p class="description">Create beautiful, usable interfaces to help shape the future of how the web looks.</p>
+				<a href="#">Get Started</a>
+			</div>
+			<div class="offer">
+				<img class="icon" src="starter-code/assets/icon-photography.svg" alt="Icon zum Thema Animation">
+				<h3 class="category">Photography</h3>
+				<p class="description">Explore critical fundamentals like lighting, composition, and focus to capture exceptional photos.</p>
+				<a href="#">Get Started</a>
+			</div>
+			<div class="offer">
+				<img class="icon" src="starter-code/assets/icon-crypto.svg" alt="Icon zum Thema Animation">
+				<h3 class="category">Crypto</h3>
+				<p class="description">All you need to know to get started investing in crypto. Go from beginner to advanced with this 54 hour course.</p>
+				<a href="#">Get Started</a>
+			</div>
+			<div class="offer">
+				<img class="icon" src="starter-code/assets/icon-business.svg" alt="Icon zum Thema Animation">
+				<h3 class="category">Busines</h3>
+				<p class="description">A step-by-step playbook to help you start, scale, and sustain your business without outside investment.</p>
+				<a href="#">Get Started</a>
+			</div>
+		</div>
+		<footer id="footer">
+			<div class="bottomline">
+				<p class="skilled">skilled</p>
+				<button class="colorPattern2">Get Started</button>
+			</div>
+		</footer>
+	</div>
+		
+	
+ 
+</body>
+</html>
+
+
+
+/* Get Started */
+
+position: absolute;
+height: 28px;
+left: 0%;
+right: 63.64%;
+top: calc(50% - 28px/2 + 95px);
+
+font-family: 'Plus Jakarta Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 28px;
+/* identical to box height, or 156% */
+
+/* F74780 */
+color: #F74780;
+
+
+
+
+
+
+
+/* Get Started */
+
+position: absolute;
+height: 28px;
+left: 8.16%;
+right: 61.52%;
+top: calc(50% - 28px/2 + 95.5px);
+
+font-family: 'Plus Jakarta Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 28px;
+/* identical to box height, or 156% */
+
+/* F74780 */
+color: #F74780;
+
+
+
+
+/* Get Started */
+
+position: absolute;
+height: 28px;
+left: 8.16%;
+right: 61.52%;
+top: calc(50% - 28px/2 + 95.5px);
+
+font-family: 'Plus Jakarta Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 28px;
+/* identical to box height, or 156% */
+
+/* F74780 */
+color: #F74780;
+
+
+
+
+
