@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500&display=swap" rel="stylesheet">	
 	<title>Frontend Mentor | Skilled e-learning landing page</title>
-
+	
 	<style> 
 
 		/* general properties and settings for all devices */
@@ -50,7 +50,11 @@
 			font-size: 28px;
 			line-height: 35px;
 		}
-		
+		.header, .offers {
+			display:flex;
+			flex-wrap:wrap;
+			justify-content:center;
+		}
 		h1#slogan {
 			font-family: 'Plus Jakarta Sans';
 			font-style: normal;
@@ -58,6 +62,12 @@
 			font-size: 40px;
 			line-height: 50px;
 			color: #13183F;
+		}
+		p.description {
+			font-size:16px;
+			font-weight: 500;
+			color: #83869A;
+			font-family:  "Plus Jakarta Sans"
 		}
 		p.callToAction{
 			/* Check out our most p */
@@ -69,19 +79,18 @@
 			line-height: 32px;
 			color: #FFFFFF;
 		}
-		.header, .offers {
-			display:flex;
-			flex-wrap:wrap;
-			justify-content:center;
+		div.offer > h3 {
+			font-family: 'Plus Jakarta Sans';
+			font-style: normal;
+			font-weight: 800;
+			font-size: 20px;
+			line-height: 25px;
+			padding-bottom:20px;
+			color: #13183F;
 		}
-		p.description{
-			font-size:16px;
-			font-weight: 500;
-			color: #83869A;
-			font-family:  "Plus Jakarta Sans"
-		}
+
 		
-		.offer > a {
+		div.offer > a {
 			font-family: 'Plus Jakarta Sans';
 			font-style: normal;
 			font-weight: 700;
@@ -423,6 +432,23 @@ line-height: 28px;
 color: #F74780;
 
 
+
+/* Photography */
+
+position: absolute;
+height: 25px;
+left: 8.16%;
+right: 54.23%;
+top: calc(50% - 25px/2 - 49px);
+
+font-family: 'Plus Jakarta Sans';
+font-style: normal;
+font-weight: 800;
+font-size: 20px;
+line-height: 25px;
+
+/* 13183F */
+color: #13183F;
 
 
 
