@@ -4,6 +4,7 @@
   	<meta charset="UTF-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+	
   	<link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
   	<!-- Kopierte Links aus www.font.google.com -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,11 +13,11 @@
 	<title>Frontend Mentor | Skilled e-learning landing page</title>
 	
 	<style> 
-
+		
 		/* general properties and settings for all devices */
 		#background {
 			background:linear-gradient(180deg,#FFFFFF,#F2F2F2);
-			border:1px solid black;
+/*			border:1px solid black;*/
 				
 		}
 		button.black, button.colorPattern1, button.colorPattern2 { /* common properties of all buttons */
@@ -29,16 +30,25 @@
 			font-weight:700;
 			color:white;
 		}
-		button.colorPattern1:hover, 
-		button.colorPattern2:hover, 
-		button.black:hover,a:hover{
-			opacity: 0.5;
-		}
 		.colorPattern2 {
 			background:linear-gradient(360deg,#4851FF, #F02AA6);
 			font-weight: 700;
 			color:white;
 		}
+		
+		button.colorPattern1:hover{
+			background: linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), linear-gradient(180deg, #FF6F48 0%, #F02AA6 100%);
+			/* aus Figma */
+		}
+		
+		button.colorPattern2:hover {
+			background: linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), linear-gradient(180deg, #4851FF -54.32%, #F02AA6 100%);
+			/* aus Figma */
+		}
+		button.black:hover {
+			background-color: #666CA3;
+		}
+		
 		.black {
 			color:white;
 			font-weight: 700;
@@ -68,7 +78,7 @@
 			font-size:16px;
 			font-weight: 500;
 			color: #83869A;
-			font-family:  "Plus Jakarta Sans"
+			font-family:  "Plus Jakarta Sans";		
 		}
 		p.callToAction{
 			/* Check out our most p */
@@ -80,14 +90,15 @@
 			line-height: 32px;
 			color: #FFFFFF;
 		}
-		div.offer > h3 {
+		div.offer > h3.category {
 			font-family: 'Plus Jakarta Sans';
 			font-style: normal;
 			font-weight: 800;
 			font-size: 20px;
 			line-height: 25px;
-			padding-bottom:20px; /* Why does margin not work here */
+			margin-bottom:24px; /* Why does margin not work here */
 			color: #13183F;
+/*			color:red;*/
 		}
 
 		
@@ -144,7 +155,7 @@
 			flex-wrap:wrap;
 			flex-shrink:0;
 		}
-		.slogan {
+		div.slogan {
 			width:343px;
 		}
 		.description { /* applicated for header and offers
@@ -173,7 +184,7 @@
 		/* setAttribute() zum überschreiben des Inhaltes von logo img für tablet und desktop */
 
 		div.callToAction {
-			border-radius:10px;
+			border-radius:15px;
 			height:120px;	/* different for tablet, desktop */
 /*			width:343px;     different for tablet, desktop */
 			align-self:flex-end;
@@ -192,7 +203,7 @@
 			background-color:white;
 			margin-top:40px;
 			height: 259px; /*  different for tablet, desktop */
-			border-radius: 10px;
+			border-radius: 15px;
 								
 		}
 		.offer > .icon {
@@ -230,6 +241,8 @@
 				margin:auto;
 				overflow: hidden;
 			}
+			
+		
 		/*white space left and right */
 			.topline, .header, .offers, div.callToAction, .bottomline {
 				margin: 0px 40px;
@@ -242,7 +255,7 @@
 				float:right;
 				margin-top:24px;
 			}
-			.slogan {
+			div.slogan {
 				width:398px; /* Figma */
 			}
 			.header {
@@ -250,11 +263,15 @@
 				margin-bottom:130px;
 /*				border:2px solid red;*/
 			}
+			.header h1#slogan, .header p.description {
+				margin:20px 0px;
+			}
+			
 			div.logo { /* picture frame */
 				width:200px;
 				height: 200px;	/* framing of picture */
 				margin:auto; /* center horizontaly */
-				margin-top:70px; /* distance to button "Get Started" */
+				margin-top:0px; /* distance to button "Get Started" */
 				position:relative; /* to center the picture */
 /*					border:1px solid red;*/
 				overflow:visible; /* to see the shadow */
@@ -263,8 +280,8 @@
 				content: url(starter-code/assets/image-hero-tablet.png) ;
 				width:300%; 	/* scaling of picture */
 				position:absolute;
-				top:-9999px;
-				bottom:-9900px;
+				top:-9959px;
+				bottom:-9999px;
 				left:-9739px;
 				right:-9999px;
 				margin:auto;
@@ -290,10 +307,13 @@
 			div.callToAction > p.callToAction {
 				margin-top:28px;
 			}
+			
 			div.offers {
 				margin-bottom:85px;
 			}
-
+			button.black:hover {
+				background-color: #666CA3;
+			}
 			
 		}
 				
@@ -318,11 +338,12 @@
 			font-size: 56px;
 			line-height: 71px;
 			color: #13183F;
+
 		}	
 		
 			.header {
-				margin-top:130px;
-				margin-bottom:250px;
+				margin-top:190px; /* trail 'n error for best results */
+				margin-bottom:190px;
 /*				border:2px solid red;*/
 			}
 			div.logo { /* picture frame */
@@ -336,11 +357,11 @@
 			}
 			img#logo { /* chossing picture and visible area */;
 				content: url(starter-code/assets/image-hero-desktop.png) ;
-				width:480%; /*	 scaling of picture */
+				width:500%; /*	 scaling of picture */
 				position:absolute;
 				top:-9999px;
-				bottom:-9939px;
-				left:-9339px;
+				bottom:-9859px;/* trail 'n error for best results */
+				left:-9369px;/* trail 'n error for best results */
 				right:-9999px;
 				margin:auto;
 				/*symmetrical positioning: showing center of picture */
@@ -350,6 +371,7 @@
 			
 			.offers {
 				width: 1110px;
+/*				height:724px;*/
 				justify-content:space-between;
 			}	
 			div.callToAction, div.offer {
@@ -362,8 +384,9 @@
 			
 			div.callToAction > p.callToAction, div.offer > p, div.offer > a, div.offer >h3 {
 				width:auto;
-				margin:0px 32px; /*for desktop margin left and right. */
+				margin:inherit 32px; /*for desktop margin left and right. */
 			}
+			
 			div.callToAction > p.callToAction {
 				margin-top:28px;
 				/* Heading M */
@@ -374,10 +397,21 @@
 				line-height: 40px;
 				color: #FFFFFF;
 			}		
+			div.offer > h3{
+				margin-bottom:20px;
+			}
 			
+			p.description {
+			font-family: 'Plus Jakarta Sans';
+			font-style: normal;
+			font-weight: 500;
+			font-size: 18px;
+			line-height: 28px;
+			color: #83869A;
+			}
 			div.offers { /* distance tiles to footer */
-					margin-bottom:140px;
-				}
+				margin-bottom:140px;
+			}
 		}	
 	</style>
 </head>
@@ -445,25 +479,4 @@
  
 </body>
 </html>
-
-
-/* Check out our most p */
-
-position: absolute;
-height: 120px;
-left: 9.14%;
-right: 9.14%;
-top: calc(50% - 120px/2 - 37px);
-
-/* Heading M */
-font-family: 'Plus Jakarta Sans';
-font-style: normal;
-font-weight: 800;
-font-size: 32px;
-line-height: 40px;
-/* or 125% */
-
-/* FFFFFF */
-color: #FFFFFF;
-
 
