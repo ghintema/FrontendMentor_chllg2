@@ -137,7 +137,7 @@
 		}
 		button.colorPattern1 { /* large button on the left */
 			height:56px;
-			width:156px;
+			width:167px;
 			border-radius:28px;
 
 		}
@@ -158,9 +158,7 @@
 		div.slogan {
 			width:343px;
 		}
-		.description { /* applicated for header and offers
-			/* ?????*/
-		}
+		
 		div.logo { /* picture frame */
 			width:327px;
 			height: 327px;
@@ -168,11 +166,12 @@
 			margin-top:70px; /* distance to button "Get Started" */
 			position:relative; /* to center the picture */
 /*				border:1px solid red;*/
-			overflow:visible; /* to see the shadow */
+			overflow:visible; /*to see the shadow*/
 		}
-		img#logo { /* chossing picture and visible area */;
+		img#logo { /* chossing picture and visible area */
 			content: url(starter-code/assets/image-hero-mobile.png) ;
 			position:absolute;
+		
 			top:-9999px;
 			bottom:-9999px;
 			left:-9999px;
@@ -225,8 +224,6 @@
 		footer p.skilled {
 			color:white;
 			float:left;
-			margin:top:70px;
-
 		}
 		footer button {
 			float:right;
@@ -246,6 +243,10 @@
 		/*white space left and right */
 			.topline, .header, .offers, div.callToAction, .bottomline {
 				margin: 0px 40px;
+			}
+			.topline{
+				position:relative;
+				z-index: 1; /* to prevent the black-button from beying hidden behind the white-space of img#logo and thus not hover. */
 			}
 			.topline > p.skilled {
 				float:left;
@@ -268,6 +269,7 @@
 			}
 			
 			div.logo { /* picture frame */
+				
 				width:200px;
 				height: 200px;	/* framing of picture */
 				margin:auto; /* center horizontaly */
@@ -276,13 +278,13 @@
 /*					border:1px solid red;*/
 				overflow:visible; /* to see the shadow */
 			}
-			img#logo { /* chossing picture and visible area */;
+			img#logo { /* chossing picture and visible area */
 				content: url(starter-code/assets/image-hero-tablet.png) ;
-				width:300%; 	/* scaling of picture */
+				width:310%; 	/* scaling of picture */
 				position:absolute;
-				top:-9959px;
+				top:-9945px;
 				bottom:-9999px;
-				left:-9739px;
+				left:-9749px;
 				right:-9999px;
 				margin:auto;
 				/*symmetrical positioning: showing center of picture */
@@ -294,6 +296,7 @@
 				justify-content:space-between;
 			}
 			div.callToAction, div.offer {
+				margin-top:56px;
 				margin-left:0px;
 				margin-right:0px;
 				width:339px;
@@ -328,18 +331,30 @@
 			.topline, .header, .offers, div.callToAction, .bottomline {
 				margin: 0px 165px;
 			}
+			/* size of buttons */
+			button.black, button.colorPattern2 { 
+				height:56px;
+				width:167px;
+				border-radius:28px;
+			}
+			button.colorPattern1 { /* large button on the left */
+				height:63px;
+				width:167px;
+				border-radius:32px;
+
+			}	
 			div.slogan {	
 					width:457px; /* Figma */
 				}	
 			h1#slogan {
-			font-family: 'Plus Jakarta Sans';
-			font-style: normal;
-			font-weight: 800;
-			font-size: 56px;
-			line-height: 71px;
-			color: #13183F;
+				font-family: 'Plus Jakarta Sans';
+				font-style: normal;
+				font-weight: 800;
+				font-size: 56px;
+				line-height: 71px;
+				color: #13183F;
 
-		}	
+			}	
 		
 			.header {
 				margin-top:190px; /* trail 'n error for best results */
@@ -355,9 +370,9 @@
 /*					border:1px solid red;*/
 				overflow:visible; /* to see the shadow */
 			}
-			img#logo { /* chossing picture and visible area */;
+			img#logo { /* chossing picture and visible area */
 				content: url(starter-code/assets/image-hero-desktop.png) ;
-				width:500%; /*	 scaling of picture */
+				width:520%; /*	 scaling of picture */
 				position:absolute;
 				top:-9999px;
 				bottom:-9859px;/* trail 'n error for best results */
@@ -375,6 +390,7 @@
 				justify-content:space-between;
 			}	
 			div.callToAction, div.offer {
+				margin-top:80px;
 				margin-left:0px;
 				margin-right:0px;
 				width:350px;
